@@ -5,7 +5,7 @@ class Servicos extends Component {
     return (
       <section id="o-que-fazemos">
         <div className="container">
-          <h1>Desenvolvendo ideais</h1>
+          <h2>Desenvolvendo ideais</h2>
           <div className="content">
             <p>A Progmar Technologies, acredita que não só fabrica softwares e soluções para seus clientes, mas também, como ajuda a desenvolver ideais. Onde ajudam os seus clientes a buscarem sempre o melhor em todas as áreas que atuam, como em seu trabalho, sua vida, seu círculo social. A Progmar, acredita que desde seu contato com o cliente até além disto, tudo se transformará em ideias, que serão seguidos.</p>
             <p>A Progmar Technologies, acredita que tudo que se faz, gera reação, então porquê, não gerar boas reações, não é mesmo. Venha ser parte da mudança, ajude-nos a criar uma WEB ainda mais inteligente.</p>

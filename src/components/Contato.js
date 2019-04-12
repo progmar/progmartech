@@ -5,7 +5,7 @@ class Contato extends Component {
     return (
       <section id="contato">
         <div className="container">
-          <h1>Converse conosco</h1>
+          <h2>Converse conosco</h2>
           <div className="content text-center">
             <p>Entre em contato conosco, e bata um papo. Ajude-nos à construir uma WEB ainda mais inteligente.</p>
           </div>
