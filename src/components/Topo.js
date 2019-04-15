@@ -15,7 +15,7 @@ class Topo extends Component {
       <nav className="navbar sticky-top navbar-expand-md navbar-light bg-white">
         <div className="container">
           <a className="navbar-brand" href="/">
-            <img src={process.env.PUBLIC_URL + '/img/logo.svg'} alt="Progmar Technologies" />
+            <img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="Progmar Technologies" />
           </a>
           <button onClick={() => this.setState({ collapse: !collapse })} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded={collapse} aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
