@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { ToastsContainer, ToastsStore } from 'react-toasts';
 
 import Topo from './components/Topo';
 import Destaque from './components/Destaque';
@@ -17,6 +18,7 @@ class App extends Component {
         <Servicos />
         <Contato />
         <Rodape />
+        <ToastsContainer store={ToastsStore} lightBackground />
       </div>
     );
   }

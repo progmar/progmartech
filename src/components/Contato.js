@@ -1,6 +1,59 @@
 import React, { Component } from 'react';
+import { ToastsStore } from 'react-toasts';
 
 class Contato extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      nome: '',
+      email: '',
+      telefone: '',
+      mensagem: ''
+    }
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+  }
+
+  handleSubmit (event) {
+    window.emailjs.send(
+      'default_service',
+      'contato_progmar',
+      {
+        'nome': this.state.nome,
+        'email': this.state.email,
+        'telefone': this.state.telefone,
+        'mensagem': this.state.mensagem
+      }
+    ).then(res => {
+      ToastsStore.success('Mensagem enviada com sucesso!')
+
+      this.setState({
+        nome: '',
+        email: '',
+        telefone: '',
+        mensagem: ''
+      });
+    }).catch(err => {
+      ToastsStore.error('Erro ao enviar mensagem. Tente novamente!')
+      
+      console.error('Failed to send Contato. Error: ', err)
+    });
+
+    event.preventDefault();
+  }
+
   render() {
     return (
       <section id="contato">
@@ -9,28 +62,28 @@ class Contato extends Component {
           <div className="content text-center">
             <p>Entre em contato conosco, e bata um papo. Ajude-nos à construir uma WEB ainda mais inteligente.</p>
           </div>
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <div className="form-row">
               <div className="form-group col-12 col-md-4">
                 <label className="sr-only" htmlFor="inputNome">Nome *</label>
-                <input className="form-control" type="text" name="nome" id="inputNome" placeholder="Seu nome *" />
+                <input className="form-control" type="text" name="nome" id="inputNome" placeholder="Seu nome *" value={this.state.nome} onChange={this.handleChange} />
               </div>
               <div className="form-group col-12 col-md-4">
                 <label className="sr-only" htmlFor="inputEmail">E-mail *</label>
-                <input className="form-control" type="email" name="email" id="inputEmail" placeholder="Seu e-mail *" />
+                <input className="form-control" type="email" name="email" id="inputEmail" placeholder="Seu e-mail *" value={this.state.email} onChange={this.handleChange} />
               </div>
               <div className="form-group col-12 col-md-4">
                 <label className="sr-only" htmlFor="inputTelefone">Telefone *</label>
-                <input className="form-control" type="tel" name="telefone" id="inputTelefone" placeholder="Seu telefone *" />
+                <input className="form-control" type="tel" name="telefone" id="inputTelefone" placeholder="Seu telefone *" value={this.state.telefone} onChange={this.handleChange} />
               </div>
             </div>
             <div className="form-row">
               <div className="form-group col">
                 <label className="sr-only" htmlFor="textareaMensagem">Mensagem *</label>
-                <textarea className="form-control" name="mensagem" id="textareaMensagem" placeholder="Sua mensagem *"></textarea>
+                <textarea className="form-control" name="mensagem" id="textareaMensagem" placeholder="Sua mensagem *" value={this.state.mensagem} onChange={this.handleChange}></textarea>
               </div>
             </div>
-            <button type="submit" className="btn btn-progmar" disabled>Enviar</button>
+            <button type="submit" className="btn btn-progmar">Enviar</button>
           </form>
         </div>
       </section>
