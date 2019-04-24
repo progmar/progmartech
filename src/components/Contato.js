@@ -66,21 +66,21 @@ class Contato extends Component {
             <div className="form-row">
               <div className="form-group col-12 col-md-4">
                 <label className="sr-only" htmlFor="inputNome">Nome *</label>
-                <input className="form-control" type="text" name="nome" id="inputNome" placeholder="Seu nome *" value={this.state.nome} onChange={this.handleChange} />
+                <input className="form-control" type="text" name="nome" id="inputNome" aria-labelledby="Nome" placeholder="Seu nome *" value={this.state.nome} onChange={this.handleChange} required />
               </div>
               <div className="form-group col-12 col-md-4">
                 <label className="sr-only" htmlFor="inputEmail">E-mail *</label>
-                <input className="form-control" type="email" name="email" id="inputEmail" placeholder="Seu e-mail *" value={this.state.email} onChange={this.handleChange} />
+                <input className="form-control" type="email" name="email" id="inputEmail" aria-labelledby="E-mail" placeholder="Seu e-mail *" value={this.state.email} onChange={this.handleChange} required />
               </div>
               <div className="form-group col-12 col-md-4">
                 <label className="sr-only" htmlFor="inputTelefone">Telefone *</label>
-                <input className="form-control" type="tel" name="telefone" id="inputTelefone" placeholder="Seu telefone *" value={this.state.telefone} onChange={this.handleChange} />
+                <input className="form-control" type="tel" name="telefone" id="inputTelefone" aria-labelledby="Telefone" placeholder="Seu telefone *" value={this.state.telefone} onChange={this.handleChange} required />
               </div>
             </div>
             <div className="form-row">
               <div className="form-group col">
                 <label className="sr-only" htmlFor="textareaMensagem">Mensagem *</label>
-                <textarea className="form-control" name="mensagem" id="textareaMensagem" placeholder="Sua mensagem *" value={this.state.mensagem} onChange={this.handleChange}></textarea>
+                <textarea className="form-control" name="mensagem" id="textareaMensagem" aria-labelledby="Mensagem" placeholder="Sua mensagem *" value={this.state.mensagem} onChange={this.handleChange} required></textarea>
               </div>
             </div>
             <button type="submit" className="btn btn-progmar">Enviar</button>

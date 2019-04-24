@@ -7,7 +7,7 @@ class Rodape extends Component {
         <div className="container">
           <div className="d-flex">
             <a href="/">
-              <img src={process.env.PUBLIC_URL + '/img/progmar-icon.png'} alt="Progmar Technologies" />
+              <img src={process.env.PUBLIC_URL + '/img/progmar-icon.svg'} alt="Progmar Technologies" />
             </a>
             <div className="ml-auto social">
               <a href="https://www.facebook.com/progmartech">
